@@ -1,9 +1,10 @@
 ﻿using BussinessObject.Models;
-using Repositories.Repositories.CarInformationRepository;
+using Repositories.Repositories.CustomerRepository;
 using Repositories.Repositories.RentingTransactionRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,11 +20,11 @@ using System.Windows.Shapes;
 namespace CarRentingManagermentWPF
 {
     /// <summary>
-    /// Interaction logic for CarManagerment.xaml
+    /// Interaction logic for RentingTransactionManagerment.xaml
     /// </summary>
-    public partial class CarManagerment : Page
+    public partial class RentingTransactionManagerment : Window
     {
-        public CarManagerment()
+        public RentingTransactionManagerment()
         {
             InitializeComponent();
             LoadData();
@@ -31,10 +32,10 @@ namespace CarRentingManagermentWPF
 
         private void LoadData()
         {
-            dgCarData.ItemsSource = CarInformationRepository.Instance.Load().ToList();
+            dgTransactionData.ItemsSource = RentingTransactionRepository.Instance.Load().ToList();
         }
 
-        private void dgCarData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void dgTransactionData_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdateMenu();
         }
@@ -44,21 +45,16 @@ namespace CarRentingManagermentWPF
 
             try
             {
-                CarInformation? rentingTransaction = dgCarData.SelectedItem as CarInformation;
-
+                RentingTransaction rentingTransaction = dgTransactionData.SelectedItem as RentingTransaction;
                 if (rentingTransaction != null)
                 {
-                    tbCarId.Text = rentingTransaction.CarId.ToString();
-                    tbCarName.Text = rentingTransaction?.CarName.ToString();
-                    tbCarDescription.Text = rentingTransaction?.CarDescription?.ToString();
-                    tbNumberOfDoors.Text = rentingTransaction?.NumberOfDoors.ToString();
-                    tbSeatingCapacity.Text = rentingTransaction?.SeatingCapacity.ToString();
-                    tbFuelType.Text = rentingTransaction?.FuelType?.ToString();
-                    tbYear.Text = rentingTransaction?.Year.ToString();
-                    tbManufacturerId.Text = rentingTransaction?.ManufacturerId.ToString();
-                    tbSupplierId.Text = rentingTransaction?.SupplierId.ToString();
-                    tbCarStatus.Text = rentingTransaction?.CarStatus.ToString();
-                    tbCarRentingPricePerDay.Text = rentingTransaction?.CarRentingPricePerDay?.ToString();
+                    tbCustomerId.Text = rentingTransaction.CustomerId.ToString();
+                    tbCustomerName.Text = CustomerRepository.Instance.Find(Int32.Parse( rentingTransaction.CustomerId.ToString())).CustomerName.ToString();
+                    if (rentingTransaction.RentingTransationId != null) tbTransationId.Text = rentingTransaction.RentingTransationId.ToString();
+                    if (rentingTransaction.RentingDate != null) tbRentingDate.Text = rentingTransaction.RentingDate.ToString();
+                    if (rentingTransaction.TotalPrice != null) tbTotalPrice.Text = rentingTransaction.TotalPrice.ToString();
+                    if (rentingTransaction.RentingStatus != null) tbRentingStatus.Text = rentingTransaction.RentingStatus.ToString();
+
 
                 }
                 //Customer? customer = dgCustomerData.SelectedItem as Customer;

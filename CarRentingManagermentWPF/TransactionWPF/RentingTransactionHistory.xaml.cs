@@ -20,19 +20,19 @@ using System.Windows.Shapes;
 namespace CarRentingManagermentWPF
 {
     /// <summary>
-    /// Interaction logic for RentingTransactionManagerment.xaml
+    /// Interaction logic for RentingTransactionHistory.xaml
     /// </summary>
-    public partial class RentingTransactionManagerment : Page
+    public partial class RentingTransactionHistory : Window
     {
-        public RentingTransactionManagerment()
+        public RentingTransactionHistory(int customerId)
         {
             InitializeComponent();
-            LoadData();
+            LoadData(customerId);
         }
 
-        private void LoadData()
+        private void LoadData(int customerId)
         {
-            dgTransactionData.ItemsSource = RentingTransactionRepository.Instance.Load().ToList();
+            dgTransactionData.ItemsSource = RentingTransactionRepository.Instance.Load(customerId);
         }
 
         private void dgTransactionData_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -45,18 +45,15 @@ namespace CarRentingManagermentWPF
 
             try
             {
-                RentingTransaction rentingTransaction = dgTransactionData.SelectedItem as RentingTransaction;
+                RentingTransaction? rentingTransaction = dgTransactionData.SelectedItem as RentingTransaction;
                 if (rentingTransaction != null)
                 {
-                    tbCustomerId.Text = rentingTransaction.CustomerId.ToString();
-                    tbCustomerName.Text = CustomerRepository.Instance.Find(Int32.Parse( rentingTransaction.CustomerId.ToString())).CustomerName.ToString();
-                    if (rentingTransaction.RentingTransationId != null) tbTransationId.Text = rentingTransaction.RentingTransationId.ToString();
-                    if (rentingTransaction.RentingDate != null) tbRentingDate.Text = rentingTransaction.RentingDate.ToString();
-                    if (rentingTransaction.TotalPrice != null) tbTotalPrice.Text = rentingTransaction.TotalPrice.ToString();
-                    if (rentingTransaction.RentingStatus != null) tbRentingStatus.Text = rentingTransaction.RentingStatus.ToString();
-
-
+                    tbTransationId.Text = rentingTransaction.RentingTransationId.ToString();
+                    tbRentingDate.Text = rentingTransaction.RentingDate.ToString();
+                    tbTotalPrice.Text = rentingTransaction.TotalPrice.ToString();
+                    tbRentingStatus.Text = rentingTransaction?.RentingStatus.ToString();
                 }
+
                 //Customer? customer = dgCustomerData.SelectedItem as Customer;
                 //if (customer != null)
                 //{
@@ -77,5 +74,7 @@ namespace CarRentingManagermentWPF
             }
 
         }
+
+        
     }
 }

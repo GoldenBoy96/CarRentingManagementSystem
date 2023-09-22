@@ -1,0 +1,36 @@
+﻿<Window x:Class="CarRentingManagermentWPF.CarCreate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarRentingManagermentWPF"
+        mc:Ignorable="d"
+        Title="CarCreate" Height="760" Width="685">
+    <Grid>
+        <Label x:Name="lbTitle" Content="Car Create" HorizontalAlignment="Left" Margin="40,41,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+        <Label x:Name="lbCarId" Content="Car Id" HorizontalAlignment="Left" Margin="40,98,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbCarId" IsReadOnly="true"  HorizontalAlignment="Left" Margin="188,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Height="28" Text="Auto Increment" SelectionOpacity="-2"/>
+        <Label x:Name="lbCarName" Content="Car Name" HorizontalAlignment="Left" Margin="40,145,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbCarName"   HorizontalAlignment="Left" Margin="188,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Height="28"/>
+        <Label x:Name="lbCarDescription" Content="Car Description" HorizontalAlignment="Left" Margin="40,194,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbCarDescription"   HorizontalAlignment="Left" Margin="188,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Height="28"/>
+        <Label x:Name="lbNumberOfDoors" Content="Number Of Doors" HorizontalAlignment="Left" Margin="40,245,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbNumberOfDoors"   HorizontalAlignment="Left" Margin="188,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Height="28"/>
+        <Label x:Name="lbSeatingCapacity_" Content="Seating Capacity " HorizontalAlignment="Left" Margin="40,295,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbSeatingCapacity"   HorizontalAlignment="Left" Margin="188,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Height="28"/>
+        <Label x:Name="lbFuelType_" Content="Fuel Type " HorizontalAlignment="Left" Margin="40,347,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbFuelType"   HorizontalAlignment="Left" Margin="188,347,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Height="28"/>
+        <Label x:Name="lbYear_" Content="Year " HorizontalAlignment="Left" Margin="40,400,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbYear"   HorizontalAlignment="Left" Margin="188,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Height="28"/>
+        <Label x:Name="lbManufacturerId_" Content="Manufacturer Id " HorizontalAlignment="Left" Margin="40,455,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbManufacturerId"   HorizontalAlignment="Left" Margin="188,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Height="28"/>
+        <Label x:Name="lbSupplierId" Content="Supplier Id" HorizontalAlignment="Left" Margin="40,514,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbSupplierId"   HorizontalAlignment="Left" Margin="188,514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Height="28"/>
+        <Label x:Name="lbCarStatus_"  Content="Car Status " HorizontalAlignment="Left" Margin="40,572,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbCarStatus"   HorizontalAlignment="Left" Margin="188,572,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Height="28"/>
+        <Label x:Name="lbCarRentingPricePerDay" Content="Renting Price Per Day " HorizontalAlignment="Left" Margin="40,629,0,0" VerticalAlignment="Top" Width="143"/>
+        <TextBox x:Name="tbCarRentingPricePerDay" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="424" Height="28" Margin="188,628,0,0"/>
+        <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="40,688,0,0" VerticalAlignment="Top" Height="36" Width="572" Click="btnCreate_Click"/>
+
+    </Grid>
+</Window>

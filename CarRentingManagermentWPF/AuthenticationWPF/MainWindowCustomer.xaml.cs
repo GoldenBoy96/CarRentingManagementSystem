@@ -10,18 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CarRentingManagermentWPF
 {
     /// <summary>
-    /// Interaction logic for LoginWindow.xaml
+    /// Interaction logic for MainWindowCustomer.xaml
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class MainWindowCustomer : Window
     {
-        public LoginWindow()
+        public MainWindowCustomer()
         {
             InitializeComponent();
+        }
+
+        private void btnProfilePage_Click(object sender, RoutedEventArgs e)
+        {
+            var next = new UserProfile();
+            next.ShowDialog();
         }
     }
 }

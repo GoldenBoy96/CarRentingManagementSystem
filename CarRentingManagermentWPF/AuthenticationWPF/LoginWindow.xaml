@@ -5,15 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarRentingManagermentWPF"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
+        Title="LoginWindow" Height="450" Width="530">
+
     <Grid>
+        <Frame x:Name="_NavigationFrame" NavigationUIVisibility="Hidden" Margin="0,0,0,30" />
         <Label x:Name="lbTitle" Content="Login" Margin="206,36,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36" HorizontalAlignment="Left" Width="104"/>
         <Label x:Name="lbEmail" Content="Email" HorizontalAlignment="Left" Margin="55,124,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="lbPassword" Content="Password" HorizontalAlignment="Left" Margin="55,183,0,0" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="tbEmail" HorizontalAlignment="Left" Margin="145,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="305" Height="34"/>
         <PasswordBox x:Name="tbPassword" HorizontalAlignment="Left" Margin="145,183,0,0" VerticalAlignment="Top" Width="305" Height="34"/>
-        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="65,254,0,0" VerticalAlignment="Top" Height="30" Width="385"/>
+        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="65,254,0,0" VerticalAlignment="Top" Height="30" Width="385" Click="btnLogin_Click"/>
         <Label x:Name="lbToRegister" Content="Don't have an account yet? Register." HorizontalAlignment="Left" Margin="157,313,0,0" VerticalAlignment="Top"/>
 
     </Grid>
+
 </Window>

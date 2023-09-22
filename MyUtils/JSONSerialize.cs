@@ -50,13 +50,18 @@ namespace MyUtils
                 if (File.Exists(filePath))
                 {
                     System.IO.File.WriteAllText(filePath, json);
+
+                    string? outPutDirectory = Directory.GetCurrentDirectory();
+                    string? absolutePath = Path.Combine(outPutDirectory, filePath);
+                    //absolutePath = absolutePath.Remove(0, 6);
+                    System.Diagnostics.Trace.WriteLine("========================" + absolutePath);
                 }
                 else
                 {
-                    string? outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+                    string? outPutDirectory = Directory.GetCurrentDirectory();
                     string? absolutePath = Path.Combine(outPutDirectory, filePath);
-                    absolutePath = absolutePath.Remove(0, 6);
-
+                    //absolutePath = absolutePath.Remove(0, 6);
+                    System.Diagnostics.Trace.WriteLine("========================" + absolutePath);
                     string tmp = absolutePath;
                     for (int i = absolutePath.Length - 1; i >= 0; i--)
                     {
@@ -79,6 +84,7 @@ namespace MyUtils
                     }
                     using (FileStream fs = File.Create(absolutePath)) ;
                     System.IO.File.WriteAllText(absolutePath, json);
+                    
                 }
 
             }

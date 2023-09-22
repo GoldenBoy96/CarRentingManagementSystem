@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CarRentingManagermentWPF
 {
     /// <summary>
-    /// Interaction logic for UserProfile.xaml
+    /// Interaction logic for RentingDetail.xaml
     /// </summary>
-    public partial class UserProfile : Page
+    public partial class RentingDetail : Window
     {
-        public UserProfile()
+        public RentingDetail()
         {
             InitializeComponent();
         }

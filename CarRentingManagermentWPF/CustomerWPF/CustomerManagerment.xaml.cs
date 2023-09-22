@@ -20,7 +20,7 @@ namespace CarRentingManagermentWPF
     /// <summary>
     /// Interaction logic for CustomerManagerment.xaml
     /// </summary>
-    public partial class CustomerManagerment : Page
+    public partial class CustomerManagerment : Window
     {
         public CustomerManagerment()
         {
